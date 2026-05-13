@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con DOM HTML</title>
+</head>
+<body>
+    <h1 id="titulo">Hola mundo</h1>
+    <h2 id="titulo2">No toques el h1</h2>
+    <script>
+        function cambiarTexto(){
+            document.getElementById('titulo2').innerHTML = 'Te dije que no';
+        }
+        document.getElementById('titulo').onclick = cambiarTexto;
+    </script>
+</body>
+</html>
