@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos con DOM HTML</title>
 </head>
-<body>
+<body onload="entrar()">
     <h1 id="titulo">Hola mundo</h1>
-    <h2 id="titulo2">No toques el h1</h2>
     <script>
-        function cambiarTexto(){
-            document.getElementById('titulo2').innerHTML = 'Te dije que no';
+        function entrar(){
+            alert('Entrando a la pagina web');
+            let texto = '';
+            if(navigator.cookieEnabled){
+                texto = 'Cookies habilitadas';
+            }else{
+                texto = 'Cookies deshabilitadas';
+            }
+            document.getElementById('titulo').innerHTML = texto;
         }
-        document.getElementById('titulo').onclick = cambiarTexto;
     </script>
 </body>
 </html>
