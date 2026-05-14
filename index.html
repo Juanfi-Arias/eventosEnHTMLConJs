@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos con DOM HTML</title>
 </head>
-<body onload="entrar()">
-    <h1 id="titulo">Hola mundo</h1>
+<body>
+    <h1 id="titulo" onmouseout="noColorin(this)" onmouseover="colorin(this)">Hola mundo</h1>
     <br/>
     Nombre: <input type="text" id="nombre" onchange="convertir(this)"/>
     <script>
-        function convertir(nombreInput){
-            nombreInput.value = nombreInput.value.toUpperCase();
+        function colorin(titulo){
+            titulo.style.color = "red";
+        }
+
+        function noColorin(parametro){
+            parametro.style.color = "black";
         }
     </script>
 </body>
