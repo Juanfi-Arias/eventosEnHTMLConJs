@@ -7,16 +7,11 @@
 </head>
 <body onload="entrar()">
     <h1 id="titulo">Hola mundo</h1>
+    <br/>
+    Nombre: <input type="text" id="nombre" onchange="convertir(this)"/>
     <script>
-        function entrar(){
-            alert('Entrando a la pagina web');
-            let texto = '';
-            if(navigator.cookieEnabled){
-                texto = 'Cookies habilitadas';
-            }else{
-                texto = 'Cookies deshabilitadas';
-            }
-            document.getElementById('titulo').innerHTML = texto;
+        function convertir(nombreInput){
+            nombreInput.value = nombreInput.value.toUpperCase();
         }
     </script>
 </body>
