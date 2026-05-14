@@ -8,14 +8,16 @@
 <body>
     <h1 id="titulo" onmouseout="noColorin(this)" onmouseover="colorin(this)">Hola mundo</h1>
     <br/>
-    Nombre: <input type="text" id="nombre" onchange="convertir(this)"/>
+    Nombre: <input type="text" onblur="regresar(this)" onfocus="cambiar(this)"/>
+    <br/><br/>
+    Apellido: <input type="text" onblur="regresar(this)" onfocus="cambiar(this)"/>
     <script>
-        function colorin(titulo){
-            titulo.style.color = "red";
+        function cambiar(elemtoInput){
+            elemtoInput.style.background = 'yellow';
         }
 
-        function noColorin(parametro){
-            parametro.style.color = "black";
+        function regresar(elemtoInput){
+            elemtoInput.style.background = 'white';
         }
     </script>
 </body>
