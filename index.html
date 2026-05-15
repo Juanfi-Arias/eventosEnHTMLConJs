@@ -6,26 +6,24 @@
     <title>Eventos con DOM HTML</title>
 </head>
 <body>
-    <h1 id="titulo" onmouseout="noColorin(this)" onmouseover="colorin(this)">Hola mundo</h1>
+    <h1 id="titulo">Hola mundo</h1>
+
+    <form action="" id="forma">
+        Nombre: <input type="text" id="nombre"/>
+        <br/><br/>
+        Apellido: <input type="text" id="apellido"/>
+    </form>
     <br/>
-    Nombre: <input type="text" id="nombre"/>
-    <br/><br/>
-    Apellido: <input type="text" id="apellido"/>
     <script>
-        document.getElementById('nombre').addEventListener('focus', (evento) =>{
-            evento.target.style.background = 'gray';
-        });
+        const forma = document.getElementById('forma');
 
-        document.getElementById('nombre').addEventListener('blur', (evento) =>{
-            evento.target.style.background = 'white';
-        });
-        document.getElementById('apellido').addEventListener('focus', (evento) =>{
+        forma.addEventListener('focus', (evento) =>{
             evento.target.style.background = 'gray';
-        });
+        }, true);
 
-        document.getElementById('apellido').addEventListener('blur', (evento) =>{
+        forma.addEventListener('blur', (evento) =>{
             evento.target.style.background = 'white';
-        });
+        }, true);
     </script>
 </body>
 </html>
