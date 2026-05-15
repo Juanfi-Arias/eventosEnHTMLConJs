@@ -8,16 +8,21 @@
 <body>
     <h1 id="titulo" onmouseout="noColorin(this)" onmouseover="colorin(this)">Hola mundo</h1>
     <br/>
-    Nombre: <input type="text" onblur="regresar(this)" onfocus="cambiar(this)"/>
+    Nombre: <input type="text" id="nombre"/>
     <br/><br/>
-    Apellido: <input type="text" onblur="regresar(this)" onfocus="cambiar(this)"/>
+    Apellido: <input type="text" id="apellido"/>
     <script>
-        function cambiar(elemtoInput){
-            elemtoInput.style.background = 'yellow';
-        }
+        document.getElementById('nombre').addEventListener('focus', cambiar);
+        document.getElementById('nombre').addEventListener('blur', regresar);
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        document.getElementById('apellido').addEventListener('blur', regresar);
 
-        function regresar(elemtoInput){
-            elemtoInput.style.background = 'white';
+        function cambiar(evento){
+            let componente = evento.target;
+            componente.style.background = 'gray';
+        }
+        function regresar(evento){
+            evento.target.style.background = 'white';
         }
     </script>
 </body>
